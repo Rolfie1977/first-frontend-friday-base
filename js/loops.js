@@ -16,19 +16,20 @@ const myApp = document.getElementById('app');
 
 
 
+
 // for loop
-for (let i = 0; i < 5; i++) {
-    console.log('step ' + i);
-}
+// for (let i = 0; i < 5; i++) {
+//     console.log('step ' + i);
+// }
 
 
 
 // while loop remember to make the expression get to false otherwise the browser crashes.
-let i = 0;
-while (i < 10) {
-    console.log("The number is " + i);
-    i++;
-}
+// let i = 0;
+// while (i < 10) {
+//     console.log("The number is " + i);
+//     i++;
+// }
 
 
 /* // for in loop used with arrays
@@ -52,17 +53,59 @@ for (let myIndex in myTestObject) {
 // debug functions ----------------------------------------------------------------------------
 //  creates a simple headline with the textmsg in a h2 in the supplied id
 // testCard('weee', 'app');
-function testCard(textMsg, myId, clearContainer) {
-    let myParent = document.getElementById(myId);
+// function testCard(textMsg, myId, clearContainer) {
+//     let myParent = document.getElementById(myId);
 
-    // clear if clearContainer is set
-    if (clearContainer) {
-        myParent.innerHTML = '';
+//     // clear if clearContainer is set
+//     if (clearContainer) {
+//         myParent.innerHTML = '';
+//     }
+
+//     // create elements
+//     let myHeadline = document.createElement('h2');
+//     myHeadline.innerText = textMsg;
+//     myParent.appendChild(myHeadline);
+
+// }
+
+// CREATE ELEMENTS
+
+
+
+for (let myIndex in myTestObject) {
+    let name = myTestObject[myIndex].name
+    
+    let picture = myTestObject[myIndex].picture
+    let description = myTestObject[myIndex].description
+
+    buildcard(name, picture, description)
+
     }
 
-    // create elements
-    let myHeadline = document.createElement('h2');
-    myHeadline.innerText = textMsg;
-    myParent.appendChild(myHeadline);
+    function buildcard(name, picture, description) {
+        const container = document.createElement("figure");
+const undertitle = document.createElement("H2");
+const figureimage = document.createElement("img");
 
-}
+const text = document.createElement("p");
+
+container.classList.add("cardstyle")
+
+myApp.appendChild(container);
+container.appendChild(undertitle);
+container.appendChild(figureimage);
+container.appendChild(text);
+
+
+undertitle.textContent = name
+text.textContent = description
+
+figureimage.src = picture
+        
+    }
+
+    
+
+
+    
+

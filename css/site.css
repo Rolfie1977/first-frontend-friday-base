@@ -31,3 +31,28 @@ header p {
   padding: 0px;
   margin: 0px;
 }
+
+.cardstyle {
+  width: 350px;
+  border: 2px solid black;
+  border-radius: 2%;
+  background-color:blanchedalmond;
+
+}
+
+.cardstyle img{
+  width: 350px;
+
+}
+
+#app{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+
+}
+
+.cardstyle p, h2{
+  padding: 1%;
+}
